@@ -8,5 +8,6 @@ if st.button("Ask AI"):
     if not query.strip():
         st.warning("Please enter a query.")
     else:
-        response = requests.post("http://localhost:8000/ask", json={"prompt": query})
+        API_URL = os.getenv("API_URL", "http://localhost:8000")
+        response = requests.post(f"{API_URL}/ask", json={"prompt": query})
         st.success(response.json()["answer"])
