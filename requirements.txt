@@ -4,6 +4,6 @@ faiss-cpu
 pypdf
 fastapi
 uvicorn
-lang-graph
+lang-graph @ git+https://github.com/langchain-ai/langgraph.git
 python-dotenv
 streamlit
