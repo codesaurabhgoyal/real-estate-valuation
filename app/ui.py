@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import os
 
 st.title("🏡 Smart Property Advisor – Hessen 🇩🇪")
 query = st.text_area("🔍 Enter your query")
