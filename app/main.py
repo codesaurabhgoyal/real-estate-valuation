@@ -18,7 +18,11 @@ agent_graph = get_agent_graph(retriever, llm)
 
 @app.post("/ask")
 async def ask(query: Query):
-    return {"answer": qa_chain.run(query.prompt)}
+    try:
+        result = qa_chain.run(query.prompt)
+        return {"answer": result}
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.post("/agent")
 async def agent(query: Query):
