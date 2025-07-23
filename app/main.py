@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from app.chains import get_qa_chain
 from models.llm import get_llm
 from scripts.build_index import build_vector_store
-
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -11,24 +10,22 @@ app = FastAPI()
 # Enable CORS for frontend → backend calls
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Or specify your frontend URL
+    allow_origins=["*"],  # You can restrict this to your Streamlit URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
 class Query(BaseModel):
     prompt: str
 
-app = FastAPI()
-
+# Load components
 vector_store = build_vector_store()
 retriever = vector_store.as_retriever(search_kwargs={"k": 5})
 llm = get_llm()
 qa_chain = get_qa_chain(llm, retriever)
-agent_graph = get_agent_graph(retriever, llm)
 
+# /ask endpoint (used by frontend)
 @app.post("/ask")
 async def ask(query: Query):
     try:
@@ -36,8 +33,3 @@ async def ask(query: Query):
         return {"answer": result}
     except Exception as e:
         return {"error": str(e)}
-
-@app.post("/agent")
-async def agent(query: Query):
-    result = agent_graph.run({"search_docs": {"query": query.prompt}})
-    return {"answer": result["answer"]}
