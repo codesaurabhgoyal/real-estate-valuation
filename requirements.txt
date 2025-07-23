@@ -6,3 +6,4 @@ fastapi
 uvicorn
 python-dotenv
 streamlit
+lang-graph @ git+https://github.com/langchain-ai/langgraph.git
