@@ -5,6 +5,20 @@ from app.agent_graph import get_agent_graph
 from models.llm import get_llm
 from scripts.build_index import build_vector_store
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Enable CORS for frontend → backend calls
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify your frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 class Query(BaseModel):
     prompt: str
 
