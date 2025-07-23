@@ -1,0 +1,4 @@
+property_id,address,city,date,price_eur,size_sqm,rooms
+HE1001,"Kaiserstraße 5, Frankfurt",Frankfurt,2024-03-01,650000,85,3
+HE1002,"Berliner Allee 22, Wiesbaden",Wiesbaden,2024-02-15,550000,95,4
+HE1003,"Luisenplatz 1, Darmstadt",Darmstadt,2024-01-10,480000,78,3

@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6638,
+          50.1071
+        ]
+      },
+      "properties": {
+        "name": "Goethe Gymnasium",
+        "type": "Secondary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2452,
+          50.0706
+        ]
+      },
+      "properties": {
+        "name": "Helene-Lange Schule",
+        "type": "Primary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6512,
+          49.8728
+        ]
+      },
+      "properties": {
+        "name": "Justus-Liebig Gymnasium",
+        "type": "Secondary"
+      }
+    }
+  ]
+}
