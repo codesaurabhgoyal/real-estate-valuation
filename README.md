@@ -21,3 +21,14 @@ uvicorn app.main:app --host=0.0.0.0 --port=8000 & streamlit run app/ui.py --serv
 4. Add environment variable: `OPENAI_API_KEY`
 
 Visit your app's public URL to use the property advisor.
+
+
+## Author
+
+**Saurabh Goyal**  
+Senior Product & AI Consultant | Data, Cloud, AI Systems  
+📍 Germany / Europe (Remote)
+
+- LinkedIn: https://www.linkedin.com/in/saurabh-product-tech-strategy/
+- GitHub: https://github.com/codesaurabhgoyal
+
